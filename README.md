@@ -9,7 +9,6 @@ A cross browser test automation app using `Gauge` and `WebdriverIO`
   - [Execute Tests](#execute-tests)
     - [grunt gauge-tests [options]](#grunt-gauge-tests-options)
     - [yarn commands](#yarn-commands)
-      - [Syntax: `yarn test:<browser>:[bstack]`](#syntax-yarn-testbrowserbstack)
 
 
 ## Getting Started
@@ -68,7 +67,7 @@ will run all scenarios tagged with `uat` on `BrowserStack` against microsoft edg
 
 You can use below yarn commands as well to run test cases
 
-#### Syntax: `yarn test:<browser>:[bstack]`
+***Syntax: `yarn test:<browser>:[bstack]`***
 
 **Example:**
 
@@ -78,7 +77,7 @@ yarn test:ie:bstack will run tests on BrowserStack
 
 ```
 
-**Note:** To execute tests on BrowserStack you have to keep browser stack's credentials in /env/default/gauge.propperties file like as below -
+**Note:** To execute tests on BrowserStack you will have to keep browser stack's credentials in /env/default/gauge.propperties file like as below -
 
 ```
 BROWSERSTACK_USERNAME = **************
