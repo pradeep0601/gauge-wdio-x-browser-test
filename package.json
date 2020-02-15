@@ -1,0 +1,36 @@
+{
+  "name": "gauge-cross-browser",
+  "version": "0.0.1",
+  "description": "A basic app for writing cross-browser test automation scripts using Gauge and webdriverio",
+  "scripts": {
+    "test:ie": "grunt gauge-tests --browser=ie",
+    "test:chrome": "grunt gauge-tests --browser=chrome",
+    "test:firefox": "grunt gauge-tests --browser=firefox",
+    "test:safari:bstack": "grunt gauge-tests --browser=safari --bstack",
+    "test:ie:bstack": "grunt gauge-tests --browser=ie --bstack",
+    "test:edge:bstack": "grunt gauge-tests --browser=edge --bstack",
+    "test:chrome:bstack": "grunt gauge-tests --browser=chrome --bstack",
+    "test:firefox:bstack": "grunt gauge-tests --browser=firefox --bstack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@sqbu-github.cisco.com:POC/gauge-cross-browser.git"
+  },
+  "author": "pradeku7@cisco.com",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "webdriverio": "^5.18.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "grunt": "^1.0.4",
+    "grunt-run": "^0.8.1",
+    "grunt-selenium-standalone": "^1.0.1",
+    "load-grunt-tasks": "^5.1.0",
+    "wdio-iedriver-service": "^0.1.0"
+  }
+}

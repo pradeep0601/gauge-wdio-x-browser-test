@@ -1,0 +1,18 @@
+node_modules
+.env
+*.log
+package-lock.json
+
+# IDE files and folders
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# Gauge - metadata dir
+.gauge
+
+# Gauge - log files dir
+logs
+
+# Gauge - reports dir
+reports
