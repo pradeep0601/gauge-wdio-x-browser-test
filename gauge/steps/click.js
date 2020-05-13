@@ -15,3 +15,17 @@ step('Click an element with selector: <selector>', async (selector) => {
     await elem.click();
   }
 });
+
+step('Click an element with selector: <selector> if exists', async (selector) => {
+  await wdio.client.pause(5000);
+  const elem = await wdio.client.$(selector);
+  if (await elem.isExisting) {
+    if (process.env.BROWSER === SAFARI) {
+      const isClickable = await elem.isClickable();
+      assert.isTrue(isClickable, `Element with selector: ${selector} is not clickable`);
+      await wdio.client.execute(`document.querySelector("${selector}").click()`);
+    } else {
+      await elem.click();
+    }
+  }
+});

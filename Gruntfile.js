@@ -16,17 +16,6 @@ module.exports = (grunt) => {
     tags = `--tags ${grunt.option('tags')}`;
   }
 
-  let env;
-  const envs = ['integration', 'prod'];
-
-  if (grunt.option('env')) {
-    const envVal = grunt.option('env');
-    if (!includes(envs, envVal)) {
-      grunt.fail.warn('env value should be either integration or prod');
-    }
-    env = `--env ${envVal}`;
-  }
-
   let retry;
   if (grunt.option('retry')) {
     let retryCount = grunt.option('retry');
@@ -111,22 +100,22 @@ module.exports = (grunt) => {
       options: {
       },
       specs: {
-        exec: `gauge run ${GAUGE_BASE_DIR} ${tags} ${env} ${retry}`,
+        exec: `gauge run ${GAUGE_BASE_DIR} ${tags} ${retry}`,
       },
     },
   });
 
   // Aliases
-  grunt.registerTask('install', 'selenium_standalone:testserver:install');
+  grunt.registerTask('install-drivers', 'selenium_standalone:testserver:install');
   grunt.registerTask('start-server', 'selenium_standalone:testserver:start');
   grunt.registerTask('stop-server', 'selenium_standalone:testserver:stop');
   grunt.registerTask('specs', 'run:specs');
 
   grunt.registerTask('gauge-tests', () => {
     const tasks = [];
-    tasks.push('install');
     if (!process.env.BSTACK) {
       tasks.push('start-server');
+      tasks.unshift('install-drivers');
     }
     tasks.push('specs');
     grunt.task.run(tasks);
