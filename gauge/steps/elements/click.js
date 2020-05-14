@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 
-const { browsers: { name: { SAFARI } } } = require('../lib/constants');
-const { wdio } = require('../lib/wdio-config');
+const { browsers: { name: { SAFARI } } } = require('../../lib/constants');
+const { wdio } = require('../../lib/wdio-config');
 
 step('Click an element with selector: <selector>', async (selector) => {
   const elem = await wdio.client.$(selector);
