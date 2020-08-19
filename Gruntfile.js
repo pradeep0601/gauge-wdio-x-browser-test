@@ -55,6 +55,9 @@ module.exports = (grunt) => {
     process.env.HEADLESS = true;
   }
 
+  const gaugeExecCommand = `gauge run ${GAUGE_BASE_DIR} ${tags || ''} ${retry || ''}`;
+  grunt.log.writeln(`gaugeExecCommand: ${gaugeExecCommand}`);
+  
   grunt.initConfig({
     selenium_standalone: {
       options: {
@@ -100,7 +103,7 @@ module.exports = (grunt) => {
       options: {
       },
       specs: {
-        exec: `gauge run ${GAUGE_BASE_DIR} ${tags} ${retry}`,
+        exec: gaugeExecCommand,
       },
     },
   });
