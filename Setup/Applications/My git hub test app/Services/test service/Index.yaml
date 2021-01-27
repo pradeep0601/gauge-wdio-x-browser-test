@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: DOCKER
+deploymentType: KUBERNETES
+helmVersion: V2
