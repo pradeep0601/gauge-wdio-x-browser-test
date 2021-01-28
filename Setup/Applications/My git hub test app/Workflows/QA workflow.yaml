@@ -36,7 +36,7 @@ phases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: test service
+  serviceName: My git hub k8 service
   statefulSet: false
 rollbackPhases:
 - type: KUBERNETES
@@ -59,6 +59,6 @@ rollbackPhases:
     phaseStepNameForRollback: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: test service
+  serviceName: My git hub k8 service
   statefulSet: false
 templatized: false
