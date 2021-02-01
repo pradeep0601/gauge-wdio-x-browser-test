@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: AWS_CODEDEPLOY
+deploymentType: AWS_CODEDEPLOY
+description: test
